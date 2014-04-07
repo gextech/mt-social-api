@@ -2097,3 +2097,40 @@ This is a normal FORM!
             "sharedId": null, 
             "timestamp": "2014-04-07T10:02:21.129-05:00"
         }
+        
+## Upload an avatar [/people/uploadAvatar]
+
+### Upload a new avatar for the user [POST]
+With this service we can upload you avatar, it is a multipart request
+
+The message has to be URLEncoded correctly
+
+This is a normal FORM!
+
++ Request
+
+    + Headers
+    
+            X-Auth-Token: {token}
+            Content-Length: 15532
+            Content-Type: multipart/form-data;boundary=434efe46ca3446f093b4c9ec79a99a14
+
+    + Body
+    
+            --434efe46ca3446f093b4c9ec79a99a14
+            Content-Type: application/octet-stream
+            Content-Disposition: form-data; name="avatar"; filename="me.png"
+            
+            ...
+
+
++ Response 200 (application/json)
+
+
+        {
+            "filename": "28e3eb32-a7d4-419c-8e0b-fd68b7a9ff27-x1396013843-me.png", 
+            "mimeType": "image/png", 
+            "originalFilename": "me.png", 
+            "url": "https://mtfan-dev.s3.amazonaws.com/28e3eb32-a7d4-419c-8e0b-fd68b7a9ff27-x1396013843-me.png", 
+            "uuid": "28e3eb32-a7d4-419c-8e0b-fd68b7a9ff27"
+        }
